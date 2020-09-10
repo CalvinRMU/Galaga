@@ -1,3 +1,3 @@
 print("Hello World")
 print("New print")
-prit("from laptop")
+print("from laptop")
