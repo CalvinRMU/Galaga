@@ -3,6 +3,8 @@ import sys
 import pygame
 
 from settings import Settings
+from ship import Ship
+import game_functions as gf
 
 def run_game():
     #init game, screen, and settings
@@ -11,14 +13,14 @@ def run_game():
 
     screen = pygame.display.set_mode((game_settings.screen_width, game_settings.screen_height))
     pygame.display.set_caption("Galaga")
-    bg_color = (230, 230, 230)
+    ship =Ship(screen)
 
     #main game loop
     while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-        screen.fill(game_settings.bg_color)
-        pygame.display.flip()
+        gf.check_events()
+        gf.update_screen(game_settings, screen, ship)
 
 run_game()
+
+
+# TODO: Page 249
