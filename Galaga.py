@@ -13,6 +13,7 @@ def run_game():
 
     screen = pygame.display.set_mode((game_settings.screen_width, game_settings.screen_height))
     pygame.display.set_caption("Galaga")
+
     ship =Ship(game_settings, screen)
 
     #main game loop
@@ -26,3 +27,4 @@ def run_game():
 #***Start Game***#
 run_game()
 # TODO: Page 256
+

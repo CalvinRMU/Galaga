@@ -1,11 +1,14 @@
 import sys
 import pygame
 
+
 def check_events(ship):
+
     #respond to keypresses and mouse movement
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
+
         elif event.type == pygame.KEYDOWN:
             check_keydown_events(event, ship)
         elif event.type == pygame.KEYUP:
@@ -22,6 +25,7 @@ def check_keyup_events(event, ship):
         ship.moving_right = False
     elif event.key == pygame.K_LEFT:
         ship.moving_left = False
+
 
 def update_screen(game_settings, screen, ship):
     #Update the screen
