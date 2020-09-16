@@ -4,6 +4,7 @@ import pygame
 from settings import Settings
 from ship import Ship
 import game_functions as gf
+from pygame.sprite import Group
 
 #Functions
 def run_game():
@@ -11,15 +12,22 @@ def run_game():
     pygame.init()
     game_settings= Settings()
 
+    #draw the screen
     screen = pygame.display.set_mode((game_settings.screen_width, game_settings.screen_height))
     pygame.display.set_caption("Galaga")
+
+    #make ship
     ship =Ship(game_settings, screen)
+
+    #make a group for bullets
+    bullets = Group()
 
     #main game loop
     while True:
-        gf.check_events(ship)
+        gf.check_events(game_settings, screen, ship, bullets)
         ship.update()
-        gf.update_screen(game_settings, screen, ship)
+        bullets.update()
+        gf.update_screen(game_settings, screen, ship, bullets)
 
 
 

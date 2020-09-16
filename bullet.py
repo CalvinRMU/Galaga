@@ -1,5 +1,5 @@
 import pygame
-from pygame.sprite import sprite
+from pygame.sprite import Sprite
 
 class Bullet(Sprite):
     #manage bullets fired from the ship
@@ -16,7 +16,7 @@ class Bullet(Sprite):
         self.rect.top = ship.rect.top
 
         self.y =float(self.rect.y)
-        self.color - game_settings.bullet_color
+        self.color = game_settings.bullet_color
         self.speed_factor = game_settings.bullet_speed_factor
 
     def update(self):
