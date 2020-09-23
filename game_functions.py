@@ -29,14 +29,15 @@ def check_keyup_events(event, ship):
         ship.moving_left = False
 
 def update_bullets(bullets):
+    bullets.update()
     for bullet in bullets.copy():
         if bullet.rect.bottom<=0:
             bullets.remove(bullet)
 
 def fire_bullet(game_settings, screen, ship, bullets):
     if len(bullets) < game_settings.bullets_allowed:
-                new_bullet = Bullet(game_settings, screen, ship)
-                bullets.add(new_bullet)
+            new_bullet = Bullet(game_settings, screen, ship)
+            bullets.add(new_bullet)
 
 def update_screen(game_settings, screen, ship, bullets):
     #redraw the screen

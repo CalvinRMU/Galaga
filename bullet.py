@@ -14,8 +14,7 @@ class Bullet(Sprite):
         #bullet starts at the top center of ship
         self.rect.centerx = ship.rect.centerx
         self.rect.top = ship.rect.top
-
-        self.y =float(self.rect.y)
+        self.y = float(self.rect.y)
         self.color = game_settings.bullet_color
         self.speed_factor = game_settings.bullet_speed_factor
 
